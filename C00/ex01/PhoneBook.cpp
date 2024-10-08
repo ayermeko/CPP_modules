@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 13:51:08 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/07 18:53:39 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/08 14:55:56 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,20 @@ void PhoneBook::add(void)
 	str 	secret = input("Darkest Secret");
 
 	this->contacts[this->id % MAX_CONTACTS] = Contact(first_name, last_name, nick_name, phone_number, secret);
-	std::cout << "Contact saved.";
+	std::cout << "Contact saved.\n";
 	this->id++;
 }
 
 void PhoneBook::printTable(void)
 {
-	
+	std::cout << "        id|first name| last name|  nickname" << std::endl;
+	for (int i = 0; i < this->id && i < MAX_CONTACTS; i++)
+	{
+		std::cout << std::setw(10) << i << "|";
+		std::cout << std::setw(10) << Contact::formatWidth(this->contacts[i].get_first_name()) << "|";
+		std::cout << std::setw(10) << Contact::formatWidth(this->contacts[i].get_last_name()) << "|";
+		std::cout << std::setw(10) << Contact::formatWidth(this->contacts[i].get_nickname()) << "\n";
+	}
 }
 
 void PhoneBook::search(void)

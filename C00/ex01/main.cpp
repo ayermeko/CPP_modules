@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 13:50:46 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/07 16:34:56 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/08 15:04:02 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int main()
 	{
 		std::cout << "Available commands: ADD, SEARCH, EXIT\n";
 		std::cout << "> ";
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command))
+		{
+			std::cout << "\nEOF detected. Exiting...\n";
+			break;
+		}
 		if (command == "ADD")
-		{
-			
-		}
+			phonebook.add();
 		else if (command == "SEARCH")
-		{
-			
-		}
+			phonebook.search();
 		else if (command == "EXIT")
 			break;
 		else

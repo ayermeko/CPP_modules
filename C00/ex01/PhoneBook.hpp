@@ -6,12 +6,11 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 13:51:11 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/07 18:20:12 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/08 11:22:31 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#pragma once
 
 # include "Contact.hpp"
 # define MAX_CONTACTS 8
@@ -30,5 +29,3 @@ class PhoneBook
 		void add(void);
 		void search(void);
 };
-
-#endif

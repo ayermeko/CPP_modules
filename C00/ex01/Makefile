@@ -6,13 +6,13 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 13:51:05 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/07 13:54:02 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/10/08 11:24:57 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= phonebook
 FLAGS 	= -Wall -Wextra -Werror -std=c++98
-SRCS 	= megaphone.cpp
+SRCS 	= main.cpp Contact.cpp PhoneBook.cpp
 CC		= c++
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
