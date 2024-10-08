@@ -6,7 +6,7 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 13:51:05 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/08 11:24:57 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/10/08 15:45:19 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,6 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 $(OBJ_DIR):
 	@mkdir -p $@
 
-run: $(NAME)
-	@./$(NAME)
-
-vrun: $(NAME)
-	@valgrind --leak-check=full -s ./$(NAME)
-
 clean:
 	@rm -rf $(OBJ_DIR)
 	@echo removed $(OBJ_DIR) folder
@@ -46,4 +40,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all run vrun clean fclean re
+.PHONY: all clean fclean re
