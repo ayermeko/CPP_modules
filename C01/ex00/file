@@ -1,0 +1,60 @@
+#include "Zombie.hpp"
+
+Zombie::Zombie(void) {}
+
+Zombie::~Zombie(void)
+{
+    std::cout << this->name << " is gone!" << std::endl;
+}
+
+Zombie::Zombie(std::string Name) : name(Name) {}
+
+void Zombie::announce(void)
+{
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+}
+
+# pragma once
+
+# include <iostream>
+# include <string>
+
+class Zombie
+{
+    private:
+        std::string name;
+    public:
+        Zombie(void);
+        ~Zombie(void);
+        Zombie(std::string Name);
+
+        void    announce(void);
+};
+
+Zombie *newZombie(std::string name);
+void    randomChump(std::string name);#include "Zombie.hpp"
+
+int main()
+{
+    Zombie *z = NULL;
+    
+    z = newZombie("John");
+    z->announce();
+    randomChump("Bob");
+    randomChump("Steve");
+    delete (z);
+    return 0;
+}
+#include "Zombie.hpp"
+
+Zombie *newZombie(std::string name)
+{
+    return (new Zombie(name));
+}#include "Zombie.hpp"
+
+void randomChump(std::string name)
+{
+    Zombie zombie(name);
+
+    zombie.announce();
+}
