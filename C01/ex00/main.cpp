@@ -15,13 +15,20 @@
 int main()
 {
     Zombie *z;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 2750aa79c818bb72e441f70b0038f9085b0c8f42
     z = newZombie("John");
     z->announce();
 
     randomChump("Steve");
+<<<<<<< HEAD
     randomChump("Bob");
 
+=======
+>>>>>>> 2750aa79c818bb72e441f70b0038f9085b0c8f42
     delete z;
     return 0;
 }
