@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 12:30:56 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/10 13:00:17 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/10 13:08:16 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/10 13:49:33 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main()
+Zombie::Zombie(void) {}
+
+Zombie::~Zombie(void) 
 {
-    Zombie *z;
+    std::cout << this->name << ": is gone" << std::endl;
+}
 
-    z = newZombie("John");
-    z->announce();
+void Zombie::announce(void)
+{
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
+}
 
-    randomChump("Steve");
-    randomChump("Bob");
-
-    delete z;
-    return 0;
+void Zombie::setName(std::string Name)
+{
+    this->name = Name;
 }

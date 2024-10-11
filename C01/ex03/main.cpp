@@ -5,23 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 12:30:56 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/10 13:00:17 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/10 14:11:18 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/10 14:50:32 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
-    Zombie *z;
+    {
+        Weapon	club = Weapon("crude spiked club");
 
-    z = newZombie("John");
-    z->announce();
+		HumanA	bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+    }
+    {
+        Weapon	club = Weapon("crude spiked club");
 
-    randomChump("Steve");
-    randomChump("Bob");
-
-    delete z;
+        
+    }
     return 0;
 }
