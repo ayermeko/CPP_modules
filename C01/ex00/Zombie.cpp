@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 20:19:52 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/09 20:19:53 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:09:38 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ Zombie::Zombie(std::string Name) : name(Name) {}
 
 void Zombie::announce(void)
 {
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ...";
+    std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
 }
