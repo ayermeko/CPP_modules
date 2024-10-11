@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 20:19:27 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/09 20:19:28 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/09 20:53:40 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/11 09:03:49 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 int main()
 {
-    Zombie *z;
-    
-    z = newZombie("John");
-    z->announce();
-    randomChump("Bob");
-    randomChump("Steve");
-    delete z;
-    return 0;
+	Zombie			 *horde;
+	std::string		  str_input;
+	int				  num_input;
+	std::stringstream ss;
+	
+	std::cout << "Enter the numbers of zombies: ";
+	std::getline(std::cin, str_input);
+	ss << str_input;
+	ss >> num_input;
+	horde = zombieHorde(num_input, "cyril");
+	delete[] horde;
+	return 0;
+	return 0;
 }

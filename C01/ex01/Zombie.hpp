@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 20:19:27 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/09 20:19:28 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/09 20:53:23 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/09 21:04:18 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#pragma once
 
-int main()
+# include <iostream>
+# include <string>
+# include <sstream>
+
+class Zombie
 {
-    Zombie *z;
-    
-    z = newZombie("John");
-    z->announce();
-    randomChump("Bob");
-    randomChump("Steve");
-    delete z;
-    return 0;
-}
+	private:
+		std::string name;
+	public:
+		Zombie(void);
+		~Zombie(void);
+
+		Zombie(std::string Name);
+		void    announce(void);
+		void	setName(std::string);
+};
+
+Zombie *zombieHorde(int number, std::string Name);

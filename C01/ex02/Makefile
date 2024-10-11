@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
+#    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/24 11:36:30 by ivotints          #+#    #+#              #
-#    Updated: 2024/10/09 15:48:34 by ayermeko         ###   ########.fr        #
+#    Created: 2024/10/09 21:27:06 by ayermeko          #+#    #+#              #
+#    Updated: 2024/10/09 21:47:33 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= zombie
-SRCS	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS	= main.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
