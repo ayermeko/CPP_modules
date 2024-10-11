@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-=======
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/09 20:19:33 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/09 20:19:35 by ayermeko         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
->>>>>>> 2750aa79c818bb72e441f70b0038f9085b0c8f42
 NAME	= zombie
 SRCS	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 OBJ_DIR	= obj
@@ -49,8 +34,4 @@ fclean: clean
 
 re: fclean all
 
-<<<<<<< HEAD
 .PHONY: all run vrun clean fclean re
-=======
-.PHONY: all run vrun clean fclean re
->>>>>>> 2750aa79c818bb72e441f70b0038f9085b0c8f42

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -7,12 +6,10 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/09 20:52:23 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/09 20:52:24 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/10/11 09:07:49 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-=======
->>>>>>> ae4401940f75b7c92f8d1bf7f82b5cfb6b81a11e
 NAME	= zombieHorde
 SRCS	= main.cpp zombieHorde.cpp Zombie.cpp
 OBJ_DIR	= obj
