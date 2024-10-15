@@ -5,23 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/11 13:24:08 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/11 13:24:09 by ayermeko         ###   ########.fr        #
+#    Created: 2024/10/13 16:47:09 by ayermeko          #+#    #+#              #
+#    Updated: 2024/10/15 18:56:36 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= zombie
-SRCS	= main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+NAME	= fixed
+SRCS	= main.cpp Fixed.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 CC		= c++
-INCLUDE =
+INCLUDE	= includes/
+VPATH	= src/
+
 
 all: $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
@@ -34,15 +36,15 @@ run: $(NAME)
 	@./$(NAME)
 
 vrun: $(NAME)
-	@valgrind --leak-check=full -s ./$(NAME)
+	@valgrind --leak-check=full --show-error-list=yes ./$(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo removed $(OBJ_DIR) folder
+#@echo removed $(OBJ_DIR) folder
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo removed $(NAME)
+#@echo removed $(NAME)
 
 re: fclean all
 

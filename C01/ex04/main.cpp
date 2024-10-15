@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 09:50:47 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/11 11:54:49 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/11 13:22:35 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Enter: ./a.out filename <string_to_find> <string_to_replace>\n"; 
+		std::cerr << "Enter: ./replace filename <string_to_find> <string_to_replace>\n"; 
 		return (1);
 	}
 
