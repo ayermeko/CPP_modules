@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/17 17:07:47 by ayermeko          #+#    #+#              #
+#    Updated: 2024/10/17 17:07:48 by ayermeko         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= fixed
 SRCS	= main.cpp Fixed.cpp
 OBJ_DIR	= obj
@@ -6,7 +18,6 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98
 CC		= c++
 INCLUDE	= includes/
 VPATH	= src/
-
 
 all: $(NAME)
 
