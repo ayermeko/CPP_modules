@@ -6,11 +6,11 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 14:52:17 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/19 12:15:45 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/10/19 13:20:54 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= claptrap
+NAME	= ScavTrap
 SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
