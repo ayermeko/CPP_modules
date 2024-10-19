@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:44:57 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/18 14:55:45 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/19 12:16:47 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "ScavTrap.hpp"
 
 class ClapTrap
 {
