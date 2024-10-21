@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 14:56:05 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/21 15:57:38 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:15:45 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,4 @@ std::string Animal::getType(void) const {
 
 void Animal::setType(std::string Type) {
 	this->type = Type;
-}
-
-void Animal::makeSound() const
-{
-	std::cout << "I am default animal\n";
 }

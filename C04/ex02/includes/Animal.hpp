@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 14:56:01 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/20 17:01:01 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/21 22:15:29 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ class Animal
 		std::string 	getType(void) const;
 		void			setType(std::string Type);
 
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 };
