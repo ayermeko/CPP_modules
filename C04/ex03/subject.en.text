@@ -1,0 +1,65 @@
+1.	Complete the dfinition of the following AMateria 
+	class and implement the necesaary member fucntions.
+
+class AMateria
+{
+	protected:
+		[...]
+	public:
+		AMateria(std::string const & type);
+		[...]
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
+};
+
+2.	Implement the Materias concrete classes Ice and Cure.
+	To set their types lowercase ('ice' for Ice, 'cure' for Cure)
+	-	clone() will return a new instance of the same type (If you clone an Ice Materia,
+		you will get a new Ice Materia).
+	-	use(ICharacter&) will display:	"Ice: '* shoots an ice bolt and <name> *'"
+										"Cure: '* heals <name>'s wounds *'"
+
+3. Write the concreate class Character which implent the interface:
+
+class ICharacter
+{
+	public:
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
+
+The Character possesses an inventory of 4 slots, which means 4 Materias
+at most. The inventory is empty at constucterion. They equip the Materias
+in the first empty slot they find. In case they try to add a Materia to a
+full inventory, do not do anything. unequip() numst NOT delete the Materia.
+
+The use(int, ICharacter&) will have to use the Materia at the slot[idx]
+and pass the target parameter to the AMateria::use fucntion.
+
+Your Character must have a constructer taking its name as a parameter.
+Any copy must be deep. During copy, the Materias of a Character must be deleted
+before the new ones are added to their inventory. Materias must be deleted
+when a Character is destoryed.
+
+4. Write the concreate class MateriaSource which will implement the following:
+
+class IMateriaSource
+{
+	public:
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
+};
+
+learnMateria - Copies the Materia passed as a parameter and store it in memory so 
+it can be cloned later. It can know at most 4 Materias.
+
+createMateria - Returns a new Materia. Returns 0 if the type is unknown.
+
+In a nutshell, your MateriaSource must be able to learn "templates" of Materias to
+create them when needed. Then, you will be able to generate a new Materia using just
+a string that identifies its type.
