@@ -6,13 +6,13 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 20:35:43 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/22 20:36:53 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:44:16 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.cpp"
+#include "AMateria.hpp"
 
 class AMateria;
 

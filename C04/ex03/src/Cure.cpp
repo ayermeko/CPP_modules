@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 20:33:34 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/22 21:02:06 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/22 20:45:18 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/22 20:59:30 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Cure.hpp"
 
-#include <iostream>
-#include <string>
-#include "ICharacter.hpp"
+Cure::Cure(void) : AMateria("cure") {}
 
-class ICharacter;
-
-class AMateria
+Cure::Cure(const Cure &src)
 {
-	protected:
-		std::string type;
-	public:
-		AMateria(std::string const & type);
-		~AMateria(void);
-		AMateria(void); // correct is later
-		
-		std::string const & getType() const; //Returns the materia type
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
-};
+	*this = src;
+}
+
+Cure::~Cure(void) {}
+
+AMateria* Cure::clone() const
+{
+	return (new Cure());
+}
