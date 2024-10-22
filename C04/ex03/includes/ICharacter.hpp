@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 19:01:35 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/22 19:06:36 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/22 20:35:43 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/22 20:36:53 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AMateria.hpp"
+#include "AMateria.cpp"
+
+class AMateria;
 
 class ICharacter
 {
