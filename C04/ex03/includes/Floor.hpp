@@ -6,12 +6,11 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:27:38 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 21:27:39 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:32:04 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FLOOR_HPP
-# define FLOOR_HPP
+#pragma once
 
 # include "AMateria.hpp"
 
@@ -39,5 +38,3 @@ class Floor
 		static void dropMateria(AMateria* materia);
 		static void clean();
 };
-
-#endif

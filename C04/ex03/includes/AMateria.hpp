@@ -6,12 +6,11 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:27:11 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 21:27:13 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:31:44 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#pragma once
 
 # include <iostream>
 # include <string>
@@ -36,5 +35,3 @@ class AMateria
 		virtual AMateria*	clone() const = 0;
 		virtual void		use(ICharacter& target);
 };
-
-#endif

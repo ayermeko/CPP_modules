@@ -6,12 +6,11 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:27:53 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 21:27:55 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:32:31 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#pragma once
 
 # include "AMateria.hpp"
 
@@ -26,5 +25,3 @@ class ICharacter
 		virtual void unequip(int idx) = 0;
 		virtual void use(int idx, ICharacter& target) = 0;
 };
-
-#endif

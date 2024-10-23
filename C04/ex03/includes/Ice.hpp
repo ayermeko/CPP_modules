@@ -6,12 +6,11 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 21:27:45 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 21:27:48 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:32:21 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#pragma once
 
 # include "AMateria.hpp"
 
@@ -27,6 +26,3 @@ class Ice : public AMateria
 		AMateria *clone(void) const;
 		void use(ICharacter &target);
 };
-
-
-#endif
