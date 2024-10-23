@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Floor.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 21:27:45 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 21:27:48 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/23 21:27:38 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/23 21:27:39 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICE_HPP
-# define ICE_HPP
+#ifndef FLOOR_HPP
+# define FLOOR_HPP
 
 # include "AMateria.hpp"
 
-class Ice : public AMateria
+struct MateriaList
 {
-	public:
-		Ice(void);
-		Ice(const Ice &src);
-		virtual ~Ice();
-		Ice	&operator=(const AMateria &src);
-		Ice	&operator=(const Ice &src);
-
-		AMateria *clone(void) const;
-		void use(ICharacter &target);
+	AMateria	*materia;
+	MateriaList	*next;
 };
 
+class Floor
+{
+	private:
+		MateriaList	*list;
+
+		Floor();
+		Floor(const Floor &src);
+		~Floor();
+
+		Floor			&operator=(const Floor &rhs);
+		void			addMateria(AMateria* materia);
+		void			cleanFloor();
+		static Floor	&getInstance();
+
+	public:
+		static void dropMateria(AMateria* materia);
+		static void clean();
+};
 
 #endif

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/22 23:38:42 by ayermeko          #+#    #+#              #
-#    Updated: 2024/10/22 23:38:43 by ayermeko         ###   ########.fr        #
+#    Created: 2024/10/23 21:28:59 by ayermeko          #+#    #+#              #
+#    Updated: 2024/10/23 21:29:02 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,3 +49,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all run vrun clean fclean re
+
