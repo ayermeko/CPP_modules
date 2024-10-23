@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/23 09:05:32 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/23 09:26:56 by ayermeko         ###   ########.fr       */
+/*   Created: 2024/10/23 09:17:01 by ayermeko          #+#    #+#             */
+/*   Updated: 2024/10/23 09:23:44 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "AMateria.hpp"
 
-AMateria::AMateria(void) {}
-
-AMateria::AMateria(std::string const &type) : type(type) {}
-
-AMateria::~AMateria(void) {}
-
-std::string const &AMateria::getType() const
+class Cure : public AMateria
 {
-    return (this->type);
-}
+    private:
+        /* data */
+    public:
+        Cure(void);
+        Cure(const Cure &src);
+        Cure &operator=(const Cure &src);
+        ~Cure(void);
 
-void AMateria::use(ICharacter &target) {
-    (void)target;
-}
+        AMateria*   clone() const;
+        void        use(ICharacter& target);
+};
