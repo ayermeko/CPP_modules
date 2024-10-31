@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:10:14 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:18:59 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &src);
         ~Bureaucrat(void);
 
+        class GradeTooHighException : public std::exception
+        {
+            const char *what() const throw();
+        };
+
+        class GradeTooLowException : public std::exception
+        {
+            const char *what() const throw();
+        };
+
         const std::string &getName(void) const;
         const int &getGrade(void) const;
 
-        void increment(void);
-        void decrement(void);
+        void incrementGrade(void);
+        void decrementGrade(void);
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src);
