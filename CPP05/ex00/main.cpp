@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:09:14 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:14:17 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:37:27 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    
+    try
+    {
+        Bureaucrat alibi("alibi", 151);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return 0;
 }
