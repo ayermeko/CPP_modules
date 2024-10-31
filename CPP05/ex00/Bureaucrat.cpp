@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:25:34 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:27:25 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ Bureaucrat::Bureaucrat(void) : name("Default Name"), grade(150) {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
+    if (grade > MIN_VAL)
+        throw GradeTooLowException();
+    if (grade < MAX_VAL)
+        throw GradeTooHighException();
     this->grade = grade;
 }
 
@@ -60,7 +64,3 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
     return ("Grade is too low!");
 }
-
-
-
-
