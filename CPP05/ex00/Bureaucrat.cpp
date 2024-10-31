@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:27:25 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:36:37 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,17 @@ const int &Bureaucrat::getGrade(void) const
     return (this->grade);
 }
 
-void Bureaucrat::incrementGrade(void) {}
+void Bureaucrat::incrementGrade(void) {
+    if (grade <= MAX_VAL)
+        throw GradeTooHighException();
+    grade--;
+}
 
-void Bureaucrat::decrementGrade(void) {}
+void Bureaucrat::decrementGrade(void) {
+    if (grade >= MIN_VAL)
+        throw GradeTooLowException();
+    grade++;
+}
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src) {
     out << src.getName() << ", bureaucrat grade " << src.getGrade() << ".\n";

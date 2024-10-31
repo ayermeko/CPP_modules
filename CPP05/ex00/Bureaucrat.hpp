@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:18:59 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:33:05 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Bureaucrat
     private:
         const std::string   name;
         int                 grade;
-        static const int    MAX_VAL = 150;
-        static const int    MIN_VAL = 1;
+        static const int    MAX_VAL = 1;
+        static const int    MIN_VAL = 150;
     public:
         Bureaucrat(void);
         Bureaucrat(std::string name, int grade);
