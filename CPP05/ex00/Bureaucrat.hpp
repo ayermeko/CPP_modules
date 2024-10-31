@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 14:52:42 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:10:14 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Bureaucrat
         static const int    MIN_VAL = 1;
     public:
         Bureaucrat(void);
+        Bureaucrat(std::string name, int grade);
         Bureaucrat &operator=(const Bureaucrat &src);
         Bureaucrat(const Bureaucrat &src);
         ~Bureaucrat(void);
