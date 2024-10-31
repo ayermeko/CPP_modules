@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:21:58 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 15:25:34 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,7 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
     return ("Grade is too low!");
 }
+
+
+
+
