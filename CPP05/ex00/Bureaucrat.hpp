@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 14:21:10 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:52:42 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,5 @@ class Bureaucrat
         void increment(void);
         void decrement(void);
 };
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &src);

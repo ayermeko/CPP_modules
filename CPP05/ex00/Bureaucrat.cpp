@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 14:38:49 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/10/31 14:58:49 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,9 @@ const std::string &Bureaucrat::getName(void) const
 const int &Bureaucrat::getGrade(void) const
 {
     return (this->grade);
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &src)
+{
+    out << src.getName() << ", bureaucrat grade " << src.getGrade() << ".\n"; 
 }
