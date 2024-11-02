@@ -6,11 +6,12 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:09:14 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/10/31 15:52:04 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:36:04 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
@@ -45,6 +46,19 @@ int main(void)
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
+	}
+    try
+	{
+		Bureaucrat alibi("alibi", 100);
+		Form form("Pass", 60, 150);
+
+		std::cout << form;
+		std::cout << alibi;
+		form.beSigned(alibi);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << " EXCEPTION!\n";
 	}
     return 0;
 }
