@@ -6,25 +6,35 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:53:45 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 14:11:35 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/02 15:16:13 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void) : _name("Default Form"), _isSigned(false), _gradeSign(150), _executeSign(150) {}
-
-Form::Form(const std::string &name, const int gradeSign, const int executeSign) : _name(name), _isSigned(false), _gradeSign(gradeSign), _executeSign(executeSign)
+void Form::validateGrades(int signGrade, int executeGrade)
 {
+    if (signGrade < MAX_VAL || executeGrade < MAX_VAL)
+		throw GradeTooHighException();
+	if (signGrade > MIN_VAL || executeGrade > MIN_VAL)
+		throw GradeTooLowException();
 }
 
-Form::Form(const Form &src) : _name(src._name), _isSigned(src._isSigned), _gradeSign(src._gradeSign), _executeSign(src._executeSign)
-{
+Form::Form(void) : _name("Default Form"), _isSigned(false), _gradeSign(150), _executeSign(150) {}
+
+Form::Form(const std::string &name, const int gradeSign, const int executeSign) : _name(name), _isSigned(false), _gradeSign(gradeSign), _executeSign(executeSign) {
+    validateGrades(gradeSign, executeSign);
+}
+
+Form::Form(const Form &src) : _name(src._name), _isSigned(src._isSigned), _gradeSign(src._gradeSign), _executeSign(src._executeSign) {
+    validateGrades(src._gradeSign, src._executeSign);
 }
 
 Form &Form::operator=(const Form &src)
 {
-    // TODO: insert return statement here
+    if (this != &src)
+        this->_isSigned = src._isSigned;
+    return (*this);    
 }
 
 Form::~Form(void) {}
@@ -51,6 +61,15 @@ int Form::getSignExecute() const
 
 void Form::beSigned(const Bureaucrat &src)
 {
+    if (_isSigned == false && src.getGrade() <= _gradeSign)
+        _isSigned = true;
+    else if (_isSigned == true)
+        std::cout << "Form " << _name << " is already signed!\n";
+    else
+    {
+        std::cerr << "Form " << _name << " can not be signed by " << src.getName() << ": ";
+        throw GradeTooLowException();        
+    }
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
@@ -63,5 +82,9 @@ const char *Form::GradeTooLowException::what() const throw() {
 
 std::ostream &operator<<(std::ostream &out, const Form &src)
 {
-    // TODO: insert return statement here
+    out << "Form " << src.getName() << " is ";
+    if (src.getSigned() == false)
+        out << "not "; 
+    out << "signed. Sign grade is " << src.getSignGrade() << ". Execute grade is " << src.getSignExecute() << ".\n";
+    return (out);   
 }

@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:53:42 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 14:00:50 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/02 14:40:22 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ class Form
         bool              _isSigned;
         const int         _gradeSign;
         const int         _executeSign;
+        static const int  MAX_VAL = 1;
+        static const int  MIN_VAL = 150;
+
+        static void validateGrades(int signGrade, int executeGrade);
     public:
         Form(void);
         Form(const std::string &name, const int gradeSign, const int executeSign);
