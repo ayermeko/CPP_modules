@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 12:53:42 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 13:45:01 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/02 14:00:50 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Form
         const int         _executeSign;
     public:
         Form(void);
-        Form(const std::string &src, const int gradeSign, const int executeSign);
+        Form(const std::string &name, const int gradeSign, const int executeSign);
         Form(const Form &src);
         Form &operator=(const Form &src);
         ~Form(void);
