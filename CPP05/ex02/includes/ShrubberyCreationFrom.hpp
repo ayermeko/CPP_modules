@@ -3,11 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationFrom.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:27:18 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 23:27:56 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:13:27 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include "AForm.hpp"
