@@ -6,13 +6,13 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:02 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 13:12:49 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:22:13 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-void Form::validateGrades(int signGrade, int executeGrade)
+void AForm::validateGrades(int signGrade, int executeGrade)
 {
     if (signGrade < MAX_VAL || executeGrade < MAX_VAL)
 		throw GradeTooHighException();
@@ -107,5 +107,5 @@ void AForm::beSigned(const Bureaucrat &src)
 
 void AFrom::execute(Bureaucrat const &executor) const
 {
-	// TODO: ching of the signed
+	// TODO: ching of the signed, and executing inheriting member funciton.
 }

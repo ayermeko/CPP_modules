@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 23:37:17 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:40:48 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,21 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
     return ("Grade is too low!");
+}
+
+void Bureaucrat::signForm(AForm &src)
+{
+    if (grade > src.getSignGrade())
+        std::cout << name << " couldn`t sign " << src.getName() << " because grade is too low.\n";
+    else
+	{
+		if (src.getSigned() == false)
+		    std::cout << name << " signed " << src.getName() << "\n";
+		src.beSigned(*this);
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	//TODO: print the string form subject, but first execute the form.
 }

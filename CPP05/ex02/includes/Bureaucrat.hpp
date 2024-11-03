@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/02 23:37:51 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:25:31 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include <iostream>
 #include <string>
+#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -44,6 +47,8 @@ class Bureaucrat
 
         void incrementGrade(void);
         void decrementGrade(void);
+        void signForm(AForm &src);
+		void executeForm(AForm const & form) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src);
