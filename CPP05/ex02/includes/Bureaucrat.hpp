@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 10:53:19 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 14:18:27 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:25:35 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ class Bureaucrat
         {
             const char *what() const throw();
         };
-
         class GradeTooLowException : public std::exception
         {
             const char *what() const throw();
