@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:02 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 13:01:48 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:12:49 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,9 @@ void AForm::beSigned(const Bureaucrat &src)
 		std::cerr << "Form " << _name << " can not be signed by " << src.getName() << ": ";
 		throw GradeTooLowException();
 	}
+}
+
+void AFrom::execute(Bureaucrat const &executor) const
+{
+	// TODO: ching of the signed
 }
