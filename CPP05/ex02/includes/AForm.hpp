@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:27:08 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 12:59:30 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:23:36 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class AForm
 		};
 		
 		const std::string &getName() const;
-		const std::string &getTraget() const;
+		const std::string &getTarget() const;
 		bool  getSigned() const;
 		int	  getSignGrade() const;
 		int   getExecuteGrade() const;

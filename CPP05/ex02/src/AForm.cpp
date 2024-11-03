@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:02 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 13:22:13 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:23:32 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void AForm::validateGrades(int signGrade, int executeGrade)
 {
-    if (signGrade < MAX_VAL || executeGrade < MAX_VAL)
+    if (signGrade < MAX_GRADE || executeGrade < MAX_GRADE)
 		throw GradeTooHighException();
-	if (signGrade > MIN_VAL || executeGrade > MIN_VAL)
+	if (signGrade > MIN_GRADE || executeGrade > MIN_GRADE)
 		throw GradeTooLowException();
 }
 
 AForm::AForm() : _name("Ordinary form"), _target("default target"), _signed(false), _signGrade(150), _executeGrade(150) {}
 
-AForm::AForm(std::string name, std::string target, int signGrade, int executeGrade) : _name(name), _target(target), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
+AForm::AForm(std::string &name, std::string &target, int signGrade, int executeGrade) : _name(name), _target(target), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	validateGrades(signGrade, executeGrade);
 }
@@ -78,10 +78,6 @@ const char *AForm::GradeTooHighException::what() const throw()
 	return ("Grade is too high!");
 }
 
-const char *AForm::UnsignedFormException::what() const throw()
-{
-	return ("Form is unsigned!");
-}
 
 std::ostream &operator<<(std::ostream &out, const AForm &src)
 {
@@ -105,7 +101,12 @@ void AForm::beSigned(const Bureaucrat &src)
 	}
 }
 
-void AFrom::execute(Bureaucrat const &executor) const
+void AForm::execute(Bureaucrat const &executor) const
 {
-	// TODO: ching of the signed, and executing inheriting member funciton.
+	// TODO: checking of the signed, and executing inheriting member funciton.
+}
+
+const char *AForm::UnsignedFromException::what() const throw()
+{
+	return ("Form is unsigned!");
 }
