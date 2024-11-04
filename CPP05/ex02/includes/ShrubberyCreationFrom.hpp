@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:27:18 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/04 16:09:09 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:22:36 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+
+class AForm;
 
 class ShrubberyCreationFrom : public AForm
 {

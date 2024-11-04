@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:27:08 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 14:23:36 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:49:43 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm
 		virtual void executeConcrete() const = 0;
 
 	public:
-		AForm(std::string &name, std::string &target, int signGrade, int executeGrade);
+		AForm(const std::string &name, const std::string &target, int signGrade, int executeGrade);
 		AForm(const AForm &src);
 		AForm &operator=(const AForm &src);
 		virtual ~AForm();

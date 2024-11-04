@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:02 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 14:23:32 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:50:25 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ void AForm::validateGrades(int signGrade, int executeGrade)
 
 AForm::AForm() : _name("Ordinary form"), _target("default target"), _signed(false), _signGrade(150), _executeGrade(150) {}
 
-AForm::AForm(std::string &name, std::string &target, int signGrade, int executeGrade) : _name(name), _target(target), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
+AForm::AForm(const std::string &name, const std::string &target, int signGrade, int executeGrade) 
+	: _name(name), _target(target), _signed(false), _signGrade(signGrade), _executeGrade(executeGrade)
 {
 	validateGrades(signGrade, executeGrade);
 }
 
-AForm::AForm(const AForm &src) : _name(src._name), _target(src._target), _signed(src._signed), _signGrade(src._signGrade), _executeGrade(src._executeGrade)
+AForm::AForm(const AForm &src) 
+	: _name(src._name), _target(src._target), _signed(src._signed), _signGrade(src._signGrade), _executeGrade(src._executeGrade)
 {
 	validateGrades(src._signGrade, src._executeGrade);
 }
