@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:02 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/04 16:50:25 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:37:54 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,14 +80,9 @@ const char *AForm::GradeTooHighException::what() const throw()
 	return ("Grade is too high!");
 }
 
-
-std::ostream &operator<<(std::ostream &out, const AForm &src)
+const char *AForm::UnsignedFromException::what() const throw()
 {
-	out << "Form " << src.getName() << " is ";
-	if (src.getSigned() == false)
-		out << "not ";
-	out << "signed. Sign grade is " << src.getSignGrade() << ". Execute grade is " << src.getExecuteGrade() << ". Target " << src.getTarget() << ".\n";
-	return (out);
+	return ("Form is unsigned!");
 }
 
 void AForm::beSigned(const Bureaucrat &src)
@@ -103,12 +98,20 @@ void AForm::beSigned(const Bureaucrat &src)
 	}
 }
 
-void AForm::execute(Bureaucrat const &executor) const
+std::ostream &operator<<(std::ostream &out, const AForm &src)
 {
-	// TODO: checking of the signed, and executing inheriting member funciton.
+	out << "Form " << src.getName() << " is ";
+	if (src.getSigned() == false)
+		out << "not ";
+	out << "signed. Sign grade is " << src.getSignGrade() << ". Execute grade is " << src.getExecuteGrade() << ". Target " << src.getTarget() << ".\n";
+	return (out);
 }
 
-const char *AForm::UnsignedFromException::what() const throw()
+void AForm::execute(Bureaucrat const &executor) const
 {
-	return ("Form is unsigned!");
+	if (_signed == false)
+		throw UnsignedFromException();
+	if (executor.getGrade() > _executeGrade)
+		throw GradeTooLowException();
+	executeConcrete();
 }

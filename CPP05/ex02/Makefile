@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
+#    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 21:28:59 by ayermeko          #+#    #+#              #
-#    Updated: 2024/11/02 23:22:32 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/11/05 16:39:56 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

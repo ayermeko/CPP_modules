@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:02:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/03 14:18:05 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:38:40 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void Bureaucrat::signForm(AForm &src)
 
 void Bureaucrat::executeForm(AForm const & form) const
 {
-	//TODO: print the string form subject, but first execute the form.
+	form.execute(*this);
+	std::cout << name << " executed " << form.getName() << "\n";
 }

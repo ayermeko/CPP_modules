@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:27:08 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/04 16:49:43 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:35:23 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,5 @@ class AForm
 		void  beSigned(const Bureaucrat &src);
 		void execute(Bureaucrat const &executor) const;
 };
+
+std::ostream &operator<<(std::ostream &out, const AForm &src);

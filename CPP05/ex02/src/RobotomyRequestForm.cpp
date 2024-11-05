@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:28:56 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/04 16:53:36 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:41:55 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,10 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::executeConcrete() const
 {
-	
+	std::cout << "* Drilling noises *\n";
+	std::srand(std::time(0));
+	if (std::rand() % 2 == 0)
+		std::cout << _target << " has been robotomized.\n";
+	else
+		std::cout << "The robotomy failed.\n";
 }

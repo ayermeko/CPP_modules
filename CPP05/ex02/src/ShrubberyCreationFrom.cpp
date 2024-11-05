@@ -6,28 +6,92 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 23:29:05 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/04 16:41:16 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/05 16:33:03 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationFrom.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationFrom::ShrubberyCreationFrom(void) {}
+ShrubberyCreationForm::ShrubberyCreationForm(void) {}
 
-void ShrubberyCreationFrom::executeConcrete() const
+void ShrubberyCreationForm::executeConcrete() const
 {
-	//TODO: ASCII trees parsing
+	std::srand(std::time(0));
+	int r = std::rand() % 3;
+	std::ofstream file((_target + "_shrubbery").c_str());
+	
+	if (!file)
+	{
+		std::cerr << "Error: Could not create file " << _target << "_shrubbery\n";
+		return ;
+	}
+	if (r == 0)
+	{
+		file << "       ###\n";
+		file << "      #o###\n";
+		file << "    #####o###\n";
+		file << "   #o#\\#|#/###\n";
+		file << "    ###\\|/#o#\n";
+		file << "     # }|{  #\n";
+		file << "       }|{\n";
+		file.close();
+	}
+	else if (r == 1)
+	{
+		file << "        v\n";
+		file << "       >X<\n";
+		file << "        A\n";
+		file << "       d$b\n";
+		file << "     .d\\$$b.\n";
+		file << "   .d$i$$\\$$b.\n";
+		file << "      d$$@b\n";
+		file << "     d\\$$$ib\n";
+		file << "   .d$$$\\$$$b\n";
+		file << " .d$$@$$$$\\$$ib.\n";
+		file << "     d$$i$$b\n";
+		file << "    d\\$$$$@$b\n";
+		file << " .d$@$$\\$$$$$@b.\n";
+		file << ".d$$$$i$$$\\$$$$$$b.\n";
+		file << "        ###\n";
+		file << "        ###\n";
+		file << "        ###\n";
+	}
+	else
+	{
+	    file << "                     - - -\n";
+		file << "                   -        -  -     --    -\n";
+		file << "                -                 -         -  -\n";
+		file << "                                -\n";
+		file << "                               -                --\n";
+		file << "               -          -            -              -\n";
+		file << "               -            '-,        -               -\n";
+		file << "               -              'b      *\n";
+		file << "                -              '$    #-                --\n";
+		file << "               -    -           $:   #:               -\n";
+		file << "             --      -  --      *#  @):        -   - -\n";
+		file << "                          -     :@,@):   ,-**:'   -\n";
+		file << "              -      -,         :@@*: --**'      -   -\n";
+		file << "                       '#o-    -:(@'-@*\"'  -\n";
+		file << "               -  -       'bq,--:,@@*'   ,*      -  -\n";
+		file << "                          ,p$q8,:@)'  -p*'      -\n";
+		file << "                   -     '  - '@@Pp@@*'    -  -\n";
+		file << "                    -  - --    Y7'.'     -  -\n";
+		file << "                              :@):.\n";
+		file << "                             .:@:'.\n";
+		file << "                           .::(@:.      \n";
+	}
+	std::cout << "Shrubbery created in " << _target << "_shrubbery\n";
 }
 
-ShrubberyCreationFrom::ShrubberyCreationFrom(const std::string &target) : AForm("Shrubbery creation form", target, 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("Shrubbery creation form", target, 145, 137) {}
 
-ShrubberyCreationFrom::ShrubberyCreationFrom(const ShrubberyCreationFrom &src) : AForm(src) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm(src) {}
 
-ShrubberyCreationFrom &ShrubberyCreationFrom::operator=(const ShrubberyCreationFrom &src)
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &src)
 {
 	if (this != &src)
 		AForm::operator=(src);
 	return (*this);	
 }
 
-ShrubberyCreationFrom::~ShrubberyCreationFrom(void) {}
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
