@@ -6,12 +6,12 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 21:28:59 by ayermeko          #+#    #+#              #
-#    Updated: 2024/11/05 16:39:56 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/11/07 13:06:10 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= amateria
-SRCS	= main.cpp AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationFrom.cpp
+SRCS	= main.cpp AForm.cpp Bureaucrat.cpp Intern.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationFrom.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
