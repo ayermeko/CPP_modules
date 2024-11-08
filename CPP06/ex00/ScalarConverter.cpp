@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:19:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/08 16:56:49 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/08 19:06:54 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &src) {(void)s
 
 ScalarConverter::~ScalarConverter(void) {}
 
-void ScalarConverter::convert(const std::string &value) {}
+void ScalarConverter::convert(const std::string &value) 
+{
+    
+}
