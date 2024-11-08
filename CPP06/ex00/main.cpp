@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:22:04 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/08 16:57:59 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:07:33 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,9 @@ int main(int argc, char *argv[])
 	}
 	else if (argv[1] && argc == 2)
 	{
-		//TODO: call the convert member function
+		ScalarConverter::convert(argv[1]);
 	}
 	else
-	{
 		testing_start();
-	}
 	return 0;
 }
