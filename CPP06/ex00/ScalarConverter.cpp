@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:19:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/09 11:03:13 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:52:04 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

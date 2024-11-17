@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 15:07:52 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/09 11:02:17 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:52:00 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <limits>
+#include <iomanip>
+#include <cmath>
 
 class ScalarConverter
 {
