@@ -6,11 +6,11 @@
 #    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 00:08:01 by ayermeko          #+#    #+#              #
-#    Updated: 2024/11/21 14:16:11 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/11/21 14:16:51 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 	= serializer
+NAME 	= ident
 FLAGS 	= -Wall -Wextra -Werror -std=c++98
 SRCS 	= main.cpp Serializer.cpp
 CC		= c++

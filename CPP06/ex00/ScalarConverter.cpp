@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:19:23 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/17 18:52:04 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:47:36 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static bool my_stod(const std::string &str, double &result)
 	std::stringstream	ss(str);
 	char				leftover;
 
-	if (str == "-inff" || str == "-inf")
-		result = -std::numeric_limits<double>::infinity();
+	if (str == "-inff" || str == "-inf") {
+		result = -std::numeric_limits<double>::infinity(); std::cout << result << std::endl; }
 	else if (str == "inff" || str == "inf" || str == "+inff" || str == "+inf")
 		result = +std::numeric_limits<double>::infinity();
 	else if (str == "nan" || str == "NaN" || str == "nanf" || str == "NaNf")
