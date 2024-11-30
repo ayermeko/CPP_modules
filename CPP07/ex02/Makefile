@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
+#    By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/27 11:43:33 by ayermeko          #+#    #+#              #
-#    Updated: 2024/11/29 15:47:25 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/11/30 13:08:27 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= iter
+NAME	= templates
 SRCS	= main.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
