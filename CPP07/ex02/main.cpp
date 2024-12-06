@@ -6,13 +6,13 @@
 /*   By: ayermeko <ayermeko@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 13:18:46 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/11/30 13:20:43 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/06 14:37:44 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-void test_int()
+static void test_int()
 {
     Array<int> numbers(10);
     srand(time(NULL));
@@ -35,7 +35,7 @@ void test_int()
 
 #include <sstream>
 
-void test_str()
+static void test_str()
 {
     std::stringstream ss;
 
