@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 16:40:25 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/19 16:41:18 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/19 18:00:39 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,7 @@ int main()
 	std::cout << storage.shortestSpan() << std::endl;
 	std::cout << storage.longestSpan() << std::endl;
 
-	Span storag(3);
-	try
-	{
-		storag.addNumber(999);
-		storag.addNumber(99);
-		storag.addNumber(9);
-	std::cout << storag.longestSpan() << std::endl;
-	std::cout << storag.shortestSpan() << std::endl;
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	
 	std::vector<int> nums;
 	nums.push_back(1);
 	nums.push_back(2);
