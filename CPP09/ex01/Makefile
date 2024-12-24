@@ -6,12 +6,12 @@
 #    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/24 15:32:33 by ayermeko          #+#    #+#              #
-#    Updated: 2024/12/24 15:33:03 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/12/24 16:09:20 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= RPN
-SRCS	= main.cpp BitcoinExchange.cpp
+SRCS	= main.cpp rpn.cpp
 OBJ_DIR	= obj
 OBJS	= $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 CFLAGS	= -Wall -Wextra -Werror -std=c++98

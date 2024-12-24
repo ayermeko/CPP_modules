@@ -6,18 +6,18 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 15:25:42 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/24 16:06:27 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/24 16:13:24 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rpn.hpp"
 
-int main(int ac, char **arv)
+int main(int ac, char **av)
 {
-    if (ac != 2)
+    if (ac == 1)
     {
-        std::cerr << "Error\n";
-        exit(0);
+        std::cerr << "Error: too few args\n";
+        return (1);
     }
     try
 	{
