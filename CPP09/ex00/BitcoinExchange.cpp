@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BincoinExchange.cpp                                :+:      :+:    :+:   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 16:53:50 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/23 18:11:19 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/24 14:22:50 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,18 @@ BitcoinExchange::~BitcoinExchange() {}
 
 static bool dateCheck(int month, int day, int year)
 {
-	if (month < 1 || month > 12 || day < 1)
-		return (1);
-	int m[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
-		m[1] = 29;
-	if (day > m[month - 1])
-		return (1);
-	return (0);
+    if (month < 1 || month > 12)
+        return true;
+    if (day < 1)
+        return true;
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0))
+        daysInMonth[1] = 29;
+    if (day > daysInMonth[month - 1])
+        return true;
+    return false;
 }
+
 
 void	BitcoinExchange::printExchangeRate(const char *input_file)
 {
