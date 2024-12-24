@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 15:31:25 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/24 16:09:31 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/24 16:32:21 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,36 @@ RPN::RPN(const RPN &) {}
 RPN &RPN::operator=(const RPN &) {return (*this);}
 RPN::~RPN() {}
 
+static void performOperation(char operation)
+{
+    if (stack.size() < 2)
+        throw std::invalid_argument("Error: not enough digits in stack.\n");
+
+    double second = stack.top();
+    stack.pop();
+    double first = stack.top();
+    stack.pop();
+
+    switch (operation)
+    {
+	    case '+':
+            stack.push(first + second);
+            break;
+        case '-':
+            stack.push(first - second);
+            break;
+        case '*':
+            stack.push(first * second);
+            break;
+        case '/':
+            if (second == 0)
+                throw std::invalid_argument("Error: division by zero.\n");
+            stack.push(first / second);
+            break;
+        default:
+            throw std::invalid_argument("Error: unknown operation.\n");
+    }
+}
 
 RPN::RPN(const std::string &expression)
 {
@@ -24,39 +54,8 @@ RPN::RPN(const std::string &expression)
 	{
 		if (isspace(expression[i]))
 			continue;
-		else if (isdigit(expression[i]))
-			stack.push(expression[i] - '0');
-		else if (expression[i] == '-' && isdigit(expression[i + 1]))
-		{
-			double num = 0;
-			while (isdigit(expression[i + 1]))
-			{
-				num *= 10;
-				num += expression[i + 1] - '0';
-				i++;
-			}
-			stack.push(num * -1);
-		}
 		else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/')
-		{
-			if (stack.size() < 2)
-				throw std::invalid_argument("Error: not enough digits in stack.\n");
-			double second = stack.top();
-			stack.pop();
-			double first = stack.top();
-			stack.pop();
-
-			if (expression[i] == '+')
-				stack.push(first + second);
-			else if (expression[i] == '-')
-				stack.push(first - second);
-			else if (expression[i] == '*')
-				stack.push(first * second);
-			else if (second == 0)
-				throw std::invalid_argument("Error: division on zero.\n");
-			else
-				stack.push(first / second);
-		}
+			performOperation(expression[i]);
 		else
 		{
 			std::cerr << "Error: unknown symbol: " << expression[i] << "\n";
