@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 15:31:25 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/24 16:32:21 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/24 18:23:29 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RPN::RPN(const RPN &) {}
 RPN &RPN::operator=(const RPN &) {return (*this);}
 RPN::~RPN() {}
 
-static void performOperation(char operation)
+void RPN::performOperation(char operation)
 {
     if (stack.size() < 2)
         throw std::invalid_argument("Error: not enough digits in stack.\n");
@@ -27,26 +27,26 @@ static void performOperation(char operation)
     double first = stack.top();
     stack.pop();
 
-    switch (operation)
-    {
-	    case '+':
-            stack.push(first + second);
-            break;
-        case '-':
-            stack.push(first - second);
-            break;
-        case '*':
-            stack.push(first * second);
-            break;
-        case '/':
-            if (second == 0)
-                throw std::invalid_argument("Error: division by zero.\n");
-            stack.push(first / second);
-            break;
-        default:
-            throw std::invalid_argument("Error: unknown operation.\n");
+    switch (operation) {
+    case '+':
+        stack.push(first + second);
+        break;
+    case '-':
+        stack.push(first - second);
+        break;
+    case '*':
+        stack.push(first * second);
+        break;
+    case '/':
+        if (second == 0)
+            throw std::invalid_argument("Error: division by zero.\n");
+        stack.push(first / second);
+        break;
+    default:
+        throw std::invalid_argument("Error: unknown operation.\n");
     }
 }
+
 
 RPN::RPN(const std::string &expression)
 {
@@ -54,6 +54,8 @@ RPN::RPN(const std::string &expression)
 	{
 		if (isspace(expression[i]))
 			continue;
+		else if (isdigit(expression[i]))
+			stack.push(expression[i] - '0');
 		else if (expression[i] == '+' || expression[i] == '-' || expression[i] == '*' || expression[i] == '/')
 			performOperation(expression[i]);
 		else
