@@ -6,14 +6,9 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:25 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/26 14:19:23 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:23:55 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-int main(int argc, char *argv[])
-{
-    
-    return 0;
-}
