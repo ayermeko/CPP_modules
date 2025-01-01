@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:22 by ayermeko          #+#    #+#             */
-/*   Updated: 2025/01/01 21:22:33 by ayermeko         ###   ########.fr       */
+/*   Updated: 2025/01/01 22:24:03 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,31 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+
+static std::string validate_arg(std::string arg)
+{
+    if (arg[0] == '-')
+        return "Negative numbers are not allowed";
+    long nbr = strtol(arg.c_str(), NULL, 10);
+    if (nbr == 0 && arg != "0")
+        return "Non-number arguments not allowed";
+    if (nbr > INT_MAX || errno == ERANGE)
+        return "Too big arguments are not allowed";
+    return "";
+}
+
+static std::string validate(int argc, char** argv)
+{
+    if (argc == 1)
+        return "No arguments were provided";
+    for (int i = 1; i < argc; i++)
+    {
+        std::string status = validate_arg(argv[i]);
+        if (status != "")
+            return status;
+    }
+    return "";
+}
 
 static std::vector<int> argv_to_vector(int argc, char** argv)
 {
@@ -37,31 +62,6 @@ static std::deque<int> argv_to_deque(int argc, char** argv)
         res.push_back(atoi(argv[i]));
     }
     return res;
-}
-
-static std::string validate_arg(std::string arg)
-{
-    if (arg[0] == '-')
-        return "Negative numbers are not allowed";
-    long nbr = strtol(arg.c_str(), NULL, 10);
-    if (nbr == 0 && arg != "0")
-        return "Non-number arguments not allowed";
-    if (nbr > INT_MAX || errno == ERANGE)
-        return "Too big arguments are not allowed";
-    return "";
-}
-
-static std::string check_args(int argc, char **argv)
-{
-    if (argc == 1)
-        return "Arguments were not found.";
-    for (int i = 0; i < argc; i++)
-    {
-        std::string status = validate_arg(argv[i]);
-        if (status != "")
-            return (status);        
-    }
-    return "";
 }
 
 template <typename T> static bool is_sorted(const T& container)
@@ -107,16 +107,16 @@ static std::string vec_to_str(std::vector<int>& vec)
     return ss.str();
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char** argv)
 {
     PmergeMe pm;
-    std::string status = check_args(argc, argv);
+    std::string status = validate(argc, argv);
     if (status != "")
     {
-        std::cerr << "Error: " << status << std::endl;
-        return (EXIT_FAILURE);
+        std::cerr << "Error: " << status << "\n";
+        return EXIT_FAILURE;
     }
-    
+
     clock_t start_vec = clock();
     std::vector<int> vec = argv_to_vector(argc, argv);
     pm.sort_vec(vec);
@@ -141,6 +141,4 @@ int main(int argc, char *argv[])
     std::cout << "Time to process a range of " << vec.size()
               << " elements with std::deque:  " << std::fixed << std::setprecision(6)
               << time_elapsed_deque << "s\n";
-    
-    return 0;
 }
