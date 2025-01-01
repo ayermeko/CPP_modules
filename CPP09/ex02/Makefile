@@ -6,7 +6,7 @@
 #    By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/24 15:32:33 by ayermeko          #+#    #+#              #
-#    Updated: 2024/12/25 16:20:38 by ayermeko         ###   ########.fr        #
+#    Updated: 2024/12/27 17:44:05 by ayermeko         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98
 CC		= g++
 INCLUDE	= includes/
 VPATH	= src/
-
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:28 by ayermeko          #+#    #+#             */
-/*   Updated: 2024/12/26 14:23:25 by ayermeko         ###   ########.fr       */
+/*   Updated: 2024/12/27 17:54:51 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <climits>
 #include <cstdlib>
 #include <iomanip>
-#include <iostram>
+#include <iostream>
 #include <sstream>
 #include <algorithm>
 #include <deque>
@@ -31,4 +31,6 @@ class PmergeMe
         PmergeMe(const PmergeMe& pm);
         PmergeMe& operator=(const PmergeMe& pm);
         ~PmergeMe();
+        
+        void sort_vec(std::vector<int> &vec);
 };
