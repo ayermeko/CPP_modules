@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:22 by ayermeko          #+#    #+#             */
-/*   Updated: 2025/01/01 22:24:03 by ayermeko         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:40:21 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,13 +119,13 @@ int main(int argc, char** argv)
 
     clock_t start_vec = clock();
     std::vector<int> vec = argv_to_vector(argc, argv);
-    pm.sort_vec(vec);
+    pm.sort_type(vec);
     clock_t end_vec = clock();
     double time_elapsed_vec = static_cast<double>(end_vec - start_vec) / CLOCKS_PER_SEC;
 
     clock_t start_deque = clock();
     std::deque<int> deque = argv_to_deque(argc, argv);
-    pm.sort_deque(deque);
+    pm.sort_type(deque);
     clock_t end_deque = clock();
     double time_elapsed_deque = static_cast<double>(end_deque - start_deque) / CLOCKS_PER_SEC;
 

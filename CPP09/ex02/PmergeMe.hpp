@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:28 by ayermeko          #+#    #+#             */
-/*   Updated: 2025/01/01 22:24:34 by ayermeko         ###   ########.fr       */
+/*   Updated: 2025/01/04 22:29:31 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ class PmergeMe
     PmergeMe& operator=(const PmergeMe& pm);
     ~PmergeMe();
 
-    void sort_vec(std::vector<int>& vec);
-    void sort_deque(std::deque<int>& deque);
+    template <typename T> void sort_type(T& container);
 
   private:
     template <typename T> void _merge_insertion_sort(T& container, int pair_level);
@@ -53,6 +52,11 @@ template <typename T> void PmergeMe::_swap_pair(T it, int pair_level)
     }
 }
 
+template <typename T> void PmergeMe::sort_type(T& container) 
+{
+    this->_merge_insertion_sort<T>(container, 1);
+}
+
 template <typename T> void PmergeMe::_merge_insertion_sort(T& container, int pair_level)
 {
     typedef typename T::iterator Iterator;
@@ -60,31 +64,19 @@ template <typename T> void PmergeMe::_merge_insertion_sort(T& container, int pai
     int pair_units_nbr = container.size() / pair_level;
     if (pair_units_nbr < 2)
         return;
-
-    /* If there is an odd pair, we ignore it during swapping.
-       It will go to the pend as the last pair. */
     bool is_odd = pair_units_nbr % 2 == 1;
 
-    /* It's important to caluclate the end position until which we should iterate.
-       We can have a set of values like:
-       ((1 2) (3 4)) ((3 8) (2 6)) | 0
-       where there are numbers (0 in this case) which can't even form a pair.
-       Those values should be ignored. */
     Iterator start = container.begin();
     Iterator last = next(container.begin(), pair_level * (pair_units_nbr));
     Iterator end = next(last, -(is_odd * pair_level));
 
-    /* Swap pairs of numbers, pairs, pairs of pairs etc by the biggest pair
-       number. After each swap we recurse. */
     int jump = 2 * pair_level;
     for (Iterator it = start; it != end; std::advance(it, jump))
     {
         Iterator this_pair = next(it, pair_level - 1);
         Iterator next_pair = next(it, pair_level * 2 - 1);
         if (*this_pair > *next_pair)
-        {
             _swap_pair(this_pair, pair_level);
-        }
     }
     _merge_insertion_sort(container, pair_level * 2);
 
