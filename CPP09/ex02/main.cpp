@@ -6,7 +6,7 @@
 /*   By: ayermeko <ayermeko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 13:48:22 by ayermeko          #+#    #+#             */
-/*   Updated: 2025/01/04 21:40:21 by ayermeko         ###   ########.fr       */
+/*   Updated: 2025/01/06 18:34:53 by ayermeko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,26 +84,26 @@ static std::string argv_to_str(int argc, char** argv)
 {
     std::string res("");
     res.reserve(argc + 1);
-    res += "[";
+    res += "";
     res += argv[1];
     for (int i = 2; argv[i]; i++)
     {
         res += " ";
         res += argv[i];
     }
-    res += "]";
+    res += "";
     return res;
 }
 
 static std::string vec_to_str(std::vector<int>& vec)
 {
     std::stringstream ss;
-    ss << "[" << vec[0];
+    ss << "" << vec[0];
     for (size_t i = 1; i < vec.size(); i++)
     {
         ss << " " << vec[i];
     }
-    ss << "]";
+    ss << "";
     return ss.str();
 }
 
@@ -133,8 +133,8 @@ int main(int argc, char** argv)
         std::cout << "Vector was not sorted properly.\n";
     if (!is_sorted(deque))
         std::cout << "Deque was not sorted properly.\n";
-    std::cout << "\033[31mBefore\033[00m: " << argv_to_str(argc, argv) << "\n";
-    std::cout << "\033[32mAfter\033[00m:  " << vec_to_str(vec) << "\n";
+    std::cout << argv_to_str(argc, argv) << "\n";
+    std::cout << vec_to_str(vec) << "\n";
     std::cout << "Time to process a range of " << vec.size()
               << " elements with std::vector: " << std::fixed << std::setprecision(6)
               << time_elapsed_vec << "s\n";
